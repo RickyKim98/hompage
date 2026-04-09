@@ -2467,7 +2467,7 @@ footer {
 <textarea id="inq-message" name="message" placeholder="프로젝트 개요, 필요한 개발 범위, 일정 등을 자유롭게 남겨주세요." required=""></textarea>
 </div>
 <div class="form-actions">
-<button class="btn btn-primary" type="submit">문의 보내기</button>
+<button class="btn btn-primary submit-btn" type="submit">문의 보내기</button>
 <div aria-live="polite" class="form-status" id="mklabs-form-status"></div>
 </div>
 </form>
@@ -2531,6 +2531,7 @@ footer {
       const data = await response.json().catch(() => ({}));
       if(response.ok){
         showStatus('success', '문의가 접수되었습니다. 첫 사용이라면 수신 메일함 또는 스팸함에 온 FormSubmit 활성화 메일을 먼저 확인해 주세요.');
+        window.alert('문의가 정상적으로 발송되었습니다. 빠르게 확인 후 회신드리겠습니다.');
         form.reset();
       } else {
         throw new Error((data && data.message) || '문의 전송에 실패했습니다.');
