@@ -2530,7 +2530,8 @@ footer {
       });
       const data = await response.json().catch(() => ({}));
       if(response.ok){
-        showStatus('success', '문의가 접수되었습니다. 첫 사용이라면 수신 메일함 또는 스팸함에 온 FormSubmit 활성화 메일을 먼저 확인해 주세요.');
+        statusBox.className = 'form-status';
+        statusBox.textContent = '';
         window.alert('문의가 정상적으로 발송되었습니다. 빠르게 확인 후 회신드리겠습니다.');
         form.reset();
       } else {
